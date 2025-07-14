@@ -10,14 +10,14 @@ class Sling{
         this.image2=loadImage("sprites/sling2.png")
         this.image3=loadImage("sprites/sling3.png")
         this.pointB=pointB
-        this.sling=Constraint.create(slingOptions)
-        World.add(world,this.sling)
+        this.body=Constraint.create(slingOptions)
+        World.add(world,this.body)
     }
     fly(){
-        this.sling.bodyA=null
+        this.body.bodyA=null
     }
     attach(objection){
-        this.sling.bodyA=objection
+        this.body.bodyA=objection
     }
     display() {
         image(this.image1,400,200)
