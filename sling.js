@@ -4,7 +4,7 @@ class Sling{
             bodyA:bodyA,
             pointB:pointB,
             length:10,
-            stiffness:50
+            stiffness:1.5
         }
         this.image1=loadImage("sprites/sling1.png")
         this.image2=loadImage("sprites/sling2.png")

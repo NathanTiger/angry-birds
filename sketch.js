@@ -16,17 +16,16 @@ var pig1,pig2
 var box,box1,box2,box3
 var log,log1,log2,log3,log4
 var sling
-var groundOptions = {
-    "isStatic":true
-}
 function preload(){
     bg = loadImage("sprites/bg.png")
 }
 
 function setup(){
     createCanvas(windowWidth,windowHeight);
+
     engine = Engine.create()
     world = engine.world
+    
     ground=new Ground(width/2,height-10,width,20)
     bird=new Bird(300,100)
     platform=new Ground(250,height-50,500,400)
@@ -71,4 +70,10 @@ function mouseDragged(){
 }
 function mouseReleased(){
     sling.fly()
+}
+function keyPressed(){
+    if(keyCode==32){
+        Body.setPosition(bird.body,{"x":300,"y":100})
+        sling.attach(bird.body)
+    }
 }
