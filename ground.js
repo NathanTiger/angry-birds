@@ -1,13 +1,20 @@
-class Ground extends Base{
-    //properties
+class Ground{
     constructor(x,y,width,height){
         var options = {
-           isStatic:true
+            "isStatic":true
         }
-        super(x,y,width,height,options)
+    this.body = Bodies.rectangle(x,y,width,height,options)
+    this.width=width
+    this.height=height
+    this.image = loadImage("sprites/ground.png")
+    World.add(world,this.body)
     }
-    //functions
     display(){
-        super.display()
+        var pos = this.body.position
+        push()
+        translate(pos.x,pos.y)
+        imageMode(CENTER)
+        image(this.image,0,0,this.width,this.height)
+        pop()
     }
 }

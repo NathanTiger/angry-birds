@@ -9,6 +9,10 @@ class Log extends Base{
         super(x,y,width,height,angle,options)
         this.image=loadImage("sprites/wood2.png")
         Body.setAngle(this.body,angle)
+        World.add(world,this.body)
     }
-    //functions
+    // functions
+    display(){
+        super.display()
+    }
 }
